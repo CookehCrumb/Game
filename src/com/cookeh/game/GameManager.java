@@ -1,5 +1,7 @@
 package com.cookeh.game;
 
+import java.util.ArrayList;
+
 import com.cookeh.engine.AbstractGame;
 import com.cookeh.engine.GameContainer;
 import com.cookeh.engine.Renderer;
@@ -7,20 +9,34 @@ import com.cookeh.engine.gfx.Image;
 
 public class GameManager extends AbstractGame {
 	
-	private Image image;
+	private ArrayList<GameObject> objects = new ArrayList<GameObject>();
 	
 	public GameManager() {
 		
 	}
 
 	@Override
-	public void update(GameContainer gc, float dt) {
-		
+	public void update(GameContainer gc, float dt) 
+	{
+		for(int i = 0; i < objects.size(); i++) 
+		{
+			objects.get(i).update(gc, dt);
+			
+			if(objects.get(i).getHealth() == 0) 
+			{
+				objects.remove(i);
+				i--;
+			}
+		}
 	}
 
 	@Override
-	public void render(GameContainer gc, Renderer r) {
-		
+	public void render(GameContainer gc, Renderer r) 
+	{
+		for(GameObject obj : objects) 
+		{
+			obj.render(gc, r);
+		}
 	}
 	
 	public static void main(String [] args) {
