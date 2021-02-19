@@ -6,7 +6,7 @@ import com.cookeh.engine.Renderer;
 public abstract class GameObject 
 {
 	protected String tag;
-	protected int posX, posY;
+	protected float posX, posY;
 	protected int width, height;
 	protected int health, energy;
 	
@@ -19,16 +19,16 @@ public abstract class GameObject
 	public void setTag(String tag) {
 		this.tag = tag;
 	}
-	public int getPosX() {
+	public float getPosX() {
 		return posX;
 	}
-	public void setPosX(int posX) {
+	public void setPosX(float posX) {
 		this.posX = posX;
 	}
-	public int getPosY() {
+	public float getPosY() {
 		return posY;
 	}
-	public void setPosY(int posY) {
+	public void setPosY(float posY) {
 		this.posY = posY;
 	}
 	public int getWidth() {
