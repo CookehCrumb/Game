@@ -1,10 +1,14 @@
 package com.cookeh.game;
 
+import java.awt.event.KeyEvent;
+
 import com.cookeh.engine.GameContainer;
 import com.cookeh.engine.Renderer;
 
 public class Player extends GameObject {
 
+	private float speed = 80;
+	
 	public Player(float posX, float posY)
 	{
 		this.tag = "player";
@@ -20,7 +24,25 @@ public class Player extends GameObject {
 	@Override
 	public void update(GameContainer gc, float dt) 
 	{
+		if(gc.getInput().isKey(KeyEvent.VK_W))
+		{
+			posY -= dt * speed;
+		}
 		
+		if(gc.getInput().isKey(KeyEvent.VK_A))
+		{
+			posX -= dt * speed;
+		}
+		
+		if(gc.getInput().isKey(KeyEvent.VK_S))
+		{
+			posY += dt * speed;
+		}
+		
+		if(gc.getInput().isKey(KeyEvent.VK_D))
+		{
+			posX += dt * speed;
+		}
 	}
 
 	@Override
