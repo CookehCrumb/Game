@@ -15,6 +15,12 @@ public class GameManager extends AbstractGame {
 	{
 		objects.add(new Player(2,2));
 	}
+	
+	@Override
+	public void init(GameContainer gc)
+	{
+		
+	}
 
 	@Override
 	public void update(GameContainer gc, float dt) 
@@ -23,7 +29,7 @@ public class GameManager extends AbstractGame {
 		{
 			objects.get(i).update(gc, dt);
 			
-			if(objects.get(i).getHealth() == 0 || objects.get(i).getEnergy() == 0) 
+			if(objects.get(i).getHealth() == 0 || objects.get(i).getEnergy() == 0	) 
 			{
 				objects.remove(i);
 				i--;
@@ -44,7 +50,6 @@ public class GameManager extends AbstractGame {
 		GameContainer gc = new GameContainer(new GameManager());
 		gc.setWidth(320);
 		gc.setHeight(240);
-		gc.getRenderer();
 		gc.start();
 	}
 
