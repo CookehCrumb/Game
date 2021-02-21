@@ -11,8 +11,9 @@ public class GameManager extends AbstractGame {
 	
 	private ArrayList<GameObject> objects = new ArrayList<GameObject>();
 	
-	public GameManager() {
-		
+	public GameManager() 
+	{
+		objects.add(new Player(2,2));
 	}
 
 	@Override
@@ -41,6 +42,9 @@ public class GameManager extends AbstractGame {
 	
 	public static void main(String [] args) {
 		GameContainer gc = new GameContainer(new GameManager());
+		gc.setWidth(320);
+		gc.setHeight(240);
+		gc.getRenderer();
 		gc.start();
 	}
 
