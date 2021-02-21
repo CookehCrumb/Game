@@ -1,6 +1,7 @@
 package com.cookeh.engine;
 
 import java.awt.event.MouseEvent;
+import java.awt.event.KeyEvent;
 
 public class GameContainer implements Runnable 
 {	
@@ -49,6 +50,8 @@ public class GameContainer implements Runnable
 		double frameTime = 0;
 		int frames = 0;
 		int fps = 0;
+		
+		game.init(this);
 		
 		while(running) 
 		{
