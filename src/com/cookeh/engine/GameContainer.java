@@ -146,4 +146,16 @@ public class GameContainer implements Runnable
 	public Input getInput() {
 		return input;
 	}
+
+	public boolean isRunning() {
+		return running;
+	}
+
+	public void setRunning(boolean running) {
+		this.running = running;
+	}
+
+	public Renderer getRenderer() {
+		return renderer;
+	}
 }
