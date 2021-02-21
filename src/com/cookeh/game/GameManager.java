@@ -23,7 +23,7 @@ public class GameManager extends AbstractGame {
 		{
 			objects.get(i).update(gc, dt);
 			
-			if(objects.get(i).getHealth() == 0) 
+			if(objects.get(i).getHealth() == 0 || objects.get(i).getEnergy() == 0) 
 			{
 				objects.remove(i);
 				i--;
